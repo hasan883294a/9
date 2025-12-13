@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>خلاصه‌سازی اکسل بر اساس کد تنوع</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      line-height: 1.6;
+      direction: rtl;
+      text-align: right;
+    }
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+    .box {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      background: #fafafa;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    input[type="file"] {
+      margin-bottom: 1rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      border: 1px solid #0d6efd;
+      background: #0d6efd;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    #status {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #333;
+      white-space: pre-line;
+    }
+    .error {
+      color: #b00020;
+    }
+    .ok {
+      color: #08660b;
+    }
+  </style>
+</head>
+<body>
+  <h1>خلاصه‌سازی اکسل بر اساس «کد تنوع»</h1>
+
+  <div class="box">
+    <p>
+      این ابزار یک فایل اکسل ورودی می‌گیرد، سطرها را بر اساس ستون
+      <strong>«کد تنوع»</strong> گروه‌بندی می‌کند و برای هر کد تنوع:
+    </p>
+    <ul>
+      <li>تعداد ردیف‌ها</li>
+      <li>جمع «مبلغ نهایی بستانکار (﷼)»</li>
+      <li>میانگین «مبلغ نهایی بستانکار (﷼)»</li>
+    </ul>
+    را محاسبه می‌کند و یک فایل اکسل خروجی برای دانلود می‌سازد.
+  </div>
+
+  <div class="box">
+    <label for="file-input">فایل اکسل را انتخاب کنید (xlsx/xls):</label>
+    <input type="file" id="file-input" accept=".xlsx,.xls" />
+    <br />
+    <button id="process-btn" disabled>پردازش و دانلود خروجی</button>
+
+    <div id="status"></div>
+  </div>
+
+  <!-- کتابخانه SheetJS برای خواندن/نوشتن اکسل در مرورگر -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <!-- کد اصلی اپلیکیشن -->
+  <script src="app.js"></script>
+</body>
+</html>
