@@ -2,8 +2,9 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>خلاصه‌سازی اکسل بر اساس کد تنوع</title>
+  <title>خلاصه‌سازی اکسل بر اساس «کد تنوع»</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
     body {
       font-family: system-ui, sans-serif;
@@ -59,6 +60,15 @@
       color: #08660b;
     }
   </style>
+
+  <!-- SheetJS برای اکسل (با defer که بعد از لود DOM اجرا شود) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"
+    defer
+  ></script>
+
+  <!-- کد اصلی برنامه -->
+  <script src="app.js" defer></script>
 </head>
 <body>
   <h1>خلاصه‌سازی اکسل بر اساس «کد تنوع»</h1>
@@ -70,8 +80,8 @@
     </p>
     <ul>
       <li>تعداد ردیف‌ها</li>
-      <li>جمع «مبلغ نهایی بستانکار (﷼)»</li>
-      <li>میانگین «مبلغ نهایی بستانکار (﷼)»</li>
+      <li>جمع «مبلغ نهایی بستانکار (ریال)»</li>
+      <li>میانگین «مبلغ نهایی بستانکار (ریال)»</li>
     </ul>
     را محاسبه می‌کند و یک فایل اکسل خروجی برای دانلود می‌سازد.
   </div>
@@ -84,10 +94,5 @@
 
     <div id="status"></div>
   </div>
-
-  <!-- کتابخانه SheetJS برای خواندن/نوشتن اکسل در مرورگر -->
-  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-  <!-- کد اصلی اپلیکیشن -->
-  <script src="app.js"></script>
 </body>
 </html>
